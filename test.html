@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Table Row Select</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 引入 CSS 文件 -->
+</head>
+<body ng-controller="MainCtrl">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="person in people" 
+                ng-class="{'selected': selectedIndex === $index}"
+                
+                ng-click="selectRow($index)">
+                <td>{{ person.name }}</td>
+                <td>{{ person.age }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        angular.module('myApp', [])
+            .controller('MainCtrl', function($scope) {
+                $scope.people = [
+                    { name: 'Alice', age: 25 },
+                    { name: 'Bob', age: 30 },
+                    { name: 'Charlie', age: 35 }
+                ];
+                $scope.hoverIndex = -1;
+                $scope.selectedIndex = -1;
+
+                $scope.selectRow = function(index) {
+                    $scope.selectedIndex = index; // 设置选中行的索引
+                };
+				
+				const dateStr = "2025-02-26T15:36:08Z";
+const dateObj = new Date(dateStr);
+
+// 获取各个部分
+const day = String(dateObj.getUTCDate()).padStart(2, "0");
+const month = String(dateObj.getUTCMonth() + 1).padStart(2, "0"); // 月份从 0 开始
+const year = dateObj.getUTCFullYear();
+const hours = String(dateObj.getUTCHours()).padStart(2, "0");
+const minutes = String(dateObj.getUTCMinutes()).padStart(2, "0");
+const seconds = String(dateObj.getUTCSeconds()).padStart(2, "0");
+
+// 格式化输出
+const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+console.log(formattedDate); // 输出: 26/02/2025 15:36:08
+            });
+    </script>
+</body>
+</html>

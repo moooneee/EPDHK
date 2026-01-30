@@ -1,0 +1,32 @@
+[
+  {
+    "metadata": {
+      "name": "HK EPD UAT",
+      "description": "HK EPD Call Information UAT",
+      "tags": "HK, EPD, Call, Information, UAT",
+      "library": "Sample",
+      "version": "1.0.0",
+      "date": "2017-02-14T23:24:41.230Z",
+      "id": "8f2c3a5b-1e7d-4b92-9c14-d0e5f6a7b8c9"
+    },
+    "configuration": {
+      "external": true,
+      "timeout": 5000,
+      "serie": true,
+      "name": "5e066f61-5794-4aab-bc1d-3dda05743062",
+      "element": "<hk-epd></hk-epd>",
+      "icon": "aoc-home",
+      "files": [
+        "hk-epd/libs/external.js",
+        "hk-epd/libs/miniq.js",
+        "hk-epd/libs/dropdown.js",
+        "hk-epd/libs/tab.js",
+        "hk-epd/libs/table-edit.js",
+        "hk-epd/hk-epd.css",
+        "hk-epd/hk-epd.js",
+        "hk-epd/hk-epd-config.js"
+      ],
+      "overrideUrl": "https://epd-avaya-callinfo-uat.domain.callcentre.com/"
+    }
+  }
+]
